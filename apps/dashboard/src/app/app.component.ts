@@ -1,6 +1,4 @@
 import { Component } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Message } from '@language-app/api-interfaces';
 
 @Component({
   selector: 'language-app-root',
@@ -8,6 +6,9 @@ import { Message } from '@language-app/api-interfaces';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  hello$ = this.http.get<Message>('/api/hello');
-  constructor(private http: HttpClient) {}
-}
+  title= 'Flashcards';
+  links= [
+    {path: '', icon: 'home', title: 'Home'},
+    {path: 'words', icon: 'view_list', title: 'Flashcards'}
+  ]
+};

@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="col-50" layout="row" layout-align="center center">
+    <language-app-language-list
+      [words]="allWords$ | async"
+      (selected)="selectWord($event)"
+      (deleted)="deleteWord($event)"
+    ></language-app-language-list>
+  </div>
+  <div class="col-50" layout="row" layout-align="center center">
+    <language-app-language-details
+      [word]="selectedWord$ | async"
+      (saved)="saveWord($event)"
+      (cancelled)="cancel()"
+      [form]="form"
+    ></language-app-language-details>
+  </div>
+</div>
